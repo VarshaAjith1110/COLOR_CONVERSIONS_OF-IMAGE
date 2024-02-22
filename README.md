@@ -44,8 +44,15 @@ Split and merge HSV Image
 
 ### i) Read and display the image
 
-<br>
-<br>
+import cv2
+image=cv2.imread('vn.jpg',1)
+image=cv2.resize(image,(400,300))
+cv2.imshow('window',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+![Screenshot 2024-02-22 082528](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/461a3195-31ca-4774-93b6-b644001f14d3)
+
 
 ### ii)Write the image
 
