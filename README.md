@@ -36,8 +36,8 @@ Split and Merge RGB Image
 Split and merge HSV Image
 
 ##### Program:
-### Developed By:
-### Register Number: 
+### Developed By: Varsha Ajith
+### Register Number: 212221230118
 
 
 ## Output:
@@ -51,7 +51,7 @@ cv2.imshow('window',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-
+## Output:
 ![Screenshot 2024-02-22 082528](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/461a3195-31ca-4774-93b6-b644001f14d3)
 
 
@@ -62,6 +62,7 @@ image=cv2.imread('vn.jpg',0)
 image=cv2.resize(image,(400,300))
 cv2.imwrite('new1.png',image)
 ```
+## Output:
 ![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/5eae6982-d795-4697-bc1a-6d38bf0b1e39)
 
 
@@ -72,8 +73,9 @@ import cv2
 image=cv2.imread('vn.jpg',1)
 print(image.shape)
 ```
+## Output:
 ![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/900b715a-9043-4cf1-8aba-95c2bd02c339)
-![Screenshot 2024-02-22 082806](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/d610ce3f-34b6-4043-bba0-933152216d1e)
+
 
 
 ### iv)Access rows and columns
@@ -89,6 +91,7 @@ cv2.imshow('WINDOW2',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## Output:
 ![Screenshot 2024-02-22 082704](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/399d4529-1d2a-44d6-ad7e-76b9aed483b6)
 ### v)Cut and paste portion of image
 ```
@@ -101,6 +104,7 @@ cv2.imshow('WINDOW3',image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## Output:
 ![Screenshot 2024-02-22 082806](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/d610ce3f-34b6-4043-bba0-933152216d1e)
 
 ### vi) BGR and RGB to HSV and GRAY
@@ -120,6 +124,7 @@ cv2.imshow('RGB2GRAY',gray2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## Output:
 ![Screenshot 2024-02-22 082939](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/f8065f80-69d0-477f-9acb-4ea72b0de4a8)
 
 ### vii) HSV to RGB and BGR
@@ -140,6 +145,7 @@ cv2.imshow('HSV2RGB',BGR)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## Output:
 ![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/69b6555f-3f87-4e3b-ba0a-439950caf5f5)
 
 ### viii) RGB and BGR to YCrCb
@@ -158,17 +164,56 @@ cv2.imshow('BGR-2-YCrCb',YCrCb2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
+## Output:
 ![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/049f2621-5752-40a8-87f7-881e9e5e22da)
 
 ### ix) Split and merge RGB Image
+```
+import cv2
+img = cv2.imread('vn.jpg',1)
+img = cv2.resize(img,(300,200))
 
+R = img[:,:,2]
+G = img[:,:,1]
+B = img[:,:,0]
+
+cv2.imshow('R-Channel',R)
+cv2.imshow('G-Channel',G)
+cv2.imshow('B-Channel',B)
+
+merged = cv2.merge((B,G,R))
+cv2.imshow('Merged RGB image',merged)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+## Output:
+![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/14a25ccd-7480-4e9c-ac4d-ed0176cfdcb5)
 
 ### x) Split and merge HSV Image
-<br>
-<br>
+
+```
 
 
+import cv2
+img = cv2.imread("vn.jpg",1)
+img = cv2.resize(img,(300,200))
+img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 
+H,S,V=cv2.split(img)
+
+cv2.imshow('Hue',H)
+cv2.imshow('Saturation',S)
+cv2.imshow('Value',V)
+
+merged = cv2.merge((H,S,V))
+cv2.imshow('Merged',merged)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+## Output:
+![image](https://github.com/VarshaAjith1110/COLOR_CONVERSIONS_OF-IMAGE/assets/94222288/cbc62796-f40c-4a62-8ef4-61088894c10f)
 
 ## Result:
 Thus the images are read, displayed, and written ,and color conversion was performed between RGB, HSV and YCbCr color models successfully using the python program.
